@@ -10,11 +10,11 @@ const skillSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now },
 });
 
-// skillSchema.pre("save", function (next) {
-//   this.updatedAt = Date.now();
-//   next();
-// });
+skillSchema.pre("save", function (next) {
+  this.updatedAt = Date.now();
+  next();
+});
 
-const Skill = mongoose.model("Project", skillSchema);
+const Skill = mongoose.model("Skill", skillSchema);
 
 export default Skill;
